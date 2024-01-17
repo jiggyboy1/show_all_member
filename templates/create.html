@@ -1,0 +1,28 @@
+{% extends 'partial/body.html' %}
+{% load static%}
+{% block content %}
+
+<header class="bg-warning py-2">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">All Member</h1>
+            <p class="lead fw-normal text-white-100 mb-0">Member Of Tennisify</p>
+        </div>
+    </div>
+</header>
+
+
+
+<br>
+<div>
+    <form action="" method="post" style="text-align: center;">
+        {% csrf_token%}
+
+        {{ member.as_p }}
+        <input type="submit" class="btn btn-outline-dark">
+
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'partial/body.html' %}
+{% load static%}
+{% block content %}
+
+<header class="bg-warning py-2">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">All Member</h1>
+            <p class="lead fw-normal text-white-100 mb-0">Member Of Tennisify</p>
+        </div>
+    </div>
+</header>
+
+<br>
+<div class="card text-center" style="width: 30rem;" >
+    <div class="card-header">
+      Member
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Name: {{member_room.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary">Location: {{member_room.location}}</h6>
+      <p>Gender: {{member_room.gender}}</p>
+      {% if member_room.active %}
+      <p>Status: Active member</p>
+      {% else %}
+      <p>Status: Non active member</p>
+      {% endif %}
+      <p class="card-text"> {{member_room.quote}}</p>
+      
+    </div>
+    <div class="card-footer text-body-secondary">
+      {{ member_room.joined }}
+    </div>
+</div>
+
+
+
+
+{% endblock %}
