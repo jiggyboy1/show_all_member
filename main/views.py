@@ -22,3 +22,7 @@ def member(request,pk):
     member_room = Member.objects.get(id=pk)
     context = {'member_room':member_room}
     return render(request,'room.html',context)
+
+
+def about(request):
+    return render(request,'about.html',)

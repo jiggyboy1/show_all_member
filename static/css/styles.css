@@ -19,3 +19,7 @@ a:hover{
   background-color: transparent;
   text-decoration: underline;
 }
+
+.about{
+  text-align: center;
+}
