@@ -12,29 +12,33 @@
 </header>
 
 <br>
-<div class="card text-center" style="width: 30rem;" >
-    <div class="card-header">
-      Member
+<div class="container  px-4 px-lg-5 mt-5">
+  <div class="row x-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+    <div class="col mb-5">
+      <div class="card text-center" style="width: 30rem;" >
+          <div class="card-header">
+            Member
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Name: {{member_room.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Location: {{member_room.location}}</h6>
+            <p>Gender: {{member_room.gender}}</p>
+            
+            {% if member_room.active %}
+            <p>Status: Active member</p>
+            {% else %}
+            <p>Status: Non active member</p>
+            {% endif %}
+            <p class="card-text"> {{member_room.quote}}</p>
+            
+          </div>
+          <div class="card-footer text-body-secondary">
+            {{ member_room.joined }}
+          </div>
+      </div>
     </div>
-    <div class="card-body">
-      <h5 class="card-title">Name: {{member_room.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-body-secondary">Location: {{member_room.location}}</h6>
-      <p>Gender: {{member_room.gender}}</p>
-      
-      {% if member_room.active %}
-      <p>Status: Active member</p>
-      {% else %}
-      <p>Status: Non active member</p>
-      {% endif %}
-      <p class="card-text"> {{member_room.quote}}</p>
-      
-    </div>
-    <div class="card-footer text-body-secondary">
-      {{ member_room.joined }}
-    </div>
+  </div>
 </div>
-
-
 
 
 {% endblock %}

@@ -1,6 +1,11 @@
 {% extends 'partial/body.html' %}
 {% load static%}
 {% block content %}
+<style>
+    .member-form{
+        text-align: center;
+    }
+</style>
 
 <header class="bg-warning py-2">
     <div class="container px-4 px-lg-5 my-5">
@@ -12,16 +17,20 @@
 </header>
 
 
-
+<br>
 <br>
 <div class="container">
     <div class="row">
         <div class="col-12">
+            <div class="member-form">
+            <h3>Create Member Form </h3>
+            </div>
+            <br>
             <form action="" method="post" style="text-align: center;">
                 {% csrf_token%}
 
                 {{ member.as_p }}
-                <input type="submit" class="btn btn-outline-dark">
+                <input type="submit" class="btn btn-outline-dark"><br><br>
 
             </form>
         </div>
