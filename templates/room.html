@@ -35,6 +35,11 @@
           <div class="card-footer text-body-secondary">
             {{ member_room.joined }}
           </div>
+          
+          <div class="col mb-5">
+            <a href="{% url 'delete_member' member_room.id %}"><button class="btn btn-outline-danger">DELETE</button></a>
+
+          </div>
       </div>
     </div>
   </div>

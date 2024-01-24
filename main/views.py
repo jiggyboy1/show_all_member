@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .models import Member
-from .forms import MemberForms
+from .forms import MemberForms,Registerform
 from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
@@ -28,6 +28,11 @@ def member(request,pk):
 def about(request):
     return render(request,'about.html',)
 
+def delete_member(request,pk):
+    member = Member.objects.get(id=pk)
+    member.delete()
+    return redirect('home')
+
 def login_user(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -42,3 +47,18 @@ def login_user(request):
     
 
     return render(request,'login.html',{})
+
+def register_user(request):
+    form = Registerform()
+    if request.method == 'POST':
+        form = Registerform(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request,user)
+            return redirect('home')
+        
+    return render(request,'register.html',{'form':form})
+
+def logout_user(request):
+    logout(request)
+    return redirect('home')
