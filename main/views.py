@@ -62,3 +62,10 @@ def register_user(request):
 def logout_user(request):
     logout(request)
     return redirect('home')
+
+def search_member(request):
+    if request.method == 'POST':
+        searched = request.POST['searched']
+        members = Member.objects.filter(name__contains=searched)
+
+    return render(request,'search.html',{'searched':searched,'members':members})
