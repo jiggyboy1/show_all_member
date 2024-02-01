@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .models import Member
 from .forms import MemberForms,Registerform
 from django.contrib.auth import authenticate,login,logout
+from django.contrib import messages
 
 # Create your views here.
 def home(request):
@@ -31,6 +32,7 @@ def about(request):
 def delete_member(request,pk):
     member = Member.objects.get(id=pk)
     member.delete()
+    messages.success(request,"Deleted This Member")
     return redirect('home')
 
 def login_user(request):

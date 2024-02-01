@@ -22,4 +22,8 @@ a:hover{
 
 .about{
   text-align: center;
+  
+}
+.about > h3{
+  font-size: 300px;
 }
