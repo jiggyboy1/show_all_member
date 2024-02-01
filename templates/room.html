@@ -37,7 +37,7 @@
           </div>
           
           <div class="col mb-5">
-            <a href="{% url 'delete_member' member_room.id %}"><button class="btn btn-outline-danger">DELETE</button></a>
+            <a href="{% url 'delete_member' member_room.id %}" class="btn btn-outline-danger" onclick="Myfunction()">Delete</a>
 
           </div>
       </div>
@@ -45,5 +45,12 @@
   </div>
 </div>
 
+
+<script>
+
+  function Myfunction(){
+    alert("Delete member")
+  }
+</script>
 
 {% endblock %}
