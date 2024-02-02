@@ -20,10 +20,8 @@ a:hover{
   text-decoration: underline;
 }
 
-.about{
+.about h3{
   text-align: center;
+  font-size: 50px;
   
-}
-.about > h3{
-  font-size: 300px;
 }
